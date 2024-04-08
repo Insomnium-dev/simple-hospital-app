@@ -1,0 +1,155 @@
+﻿<Window x:Class="MyHospital.UserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyHospital"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Height="500" Width="500"
+        Background="#181735">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition
+				Height="25" />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+
+
+        <Grid Background="#0F0F2D" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="MyHospital" 
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center" Grid.ColumnSpan="3" Margin="43,4,44,5" Width="81"
+                      
+                       />
+
+            <TextBlock Text="Help" 
+                       Foreground="LightGray" 
+                       Grid.Column="2"
+                       HorizontalAlignment="Center"
+                       MouseDown="TextBlock_MouseDown"
+                     Cursor="Hand" Margin="16,4,16,5" 
+                       />
+
+            <TextBlock Text="Web-site" 
+                       Foreground="LightGray" 
+                       Grid.Column="3"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                        MouseDown="Web_MouseDown"
+                       Cursor="Hand"
+                       />
+
+            <Button Content="Exit" Foreground="White" Margin="0,0,10,0"  Grid.Column="7" Grid.ColumnSpan="2" FontSize="10" Click="Exit_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FE6584"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF4C70"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="75" Height="15"
+                                    CornerRadius="9"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Top" Margin="20">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="116,0,0,20" Height="78">
+                    <Image Width="100" Height="60" Source="Resourses/logo.png" RenderOptions.BitmapScalingMode="Fant"/>
+                    <TextBlock Text="MyHospital"
+                           Foreground="White"
+                           FontSize="20"
+                           VerticalAlignment="Center"
+                               Margin="10,0,0,0" />
+                </StackPanel>
+
+            </StackPanel>
+
+
+        </StackPanel>
+        <TextBlock
+                           Foreground="White"
+                           FontSize="20"
+                           VerticalAlignment="Center"
+                               Margin="20,100,440,348" Grid.Row="1" Grid.ColumnSpan="2"
+                          />
+        <Button Content="Заполнить" Foreground="White" Margin="4,388,6,62" FontSize="10" Click="User_Click" Grid.Row="1">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#FE6584"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF4C70"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="100" Height="25"
+                                    CornerRadius="9"
+                                    Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBox x:Name="fio" HorizontalAlignment="Left" Height="30" Margin="150,193,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" Background="Transparent" Foreground="White"/>
+        <TextBox x:Name="numberOfCard" HorizontalAlignment="Left" Height="30" Margin="150,295,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" Background="Transparent" Foreground="White"/>
+        <TextBlock Text="ФИО"
+                        Foreground="White"
+                        FontSize="20"
+                        VerticalAlignment="Center"
+                        Margin="222,146,178,303"
+                          Grid.Row="1"/>
+        <TextBlock Text="Номер карточки"
+            Foreground="White"
+            FontSize="20"
+            VerticalAlignment="Center"
+            Margin="177,248,160,200"
+            Grid.Row="1"/>
+
+    </Grid>
+
+
+</Window>
